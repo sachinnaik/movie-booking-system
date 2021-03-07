@@ -1,0 +1,15 @@
+<div>
+    <div><%= image_tag "https://robohash.org/#{params[:id]}" %></div>
+    <div>
+        Movie: <%= @show_times.first[1][0].movie.name %>
+        Screen: <%= @show_times.first[1][0].theatre.name %>
+    </div>
+    <br/>
+    <% @show_times.each do |st| %>
+        <%= st[0] %>, 
+        <% st[1].each do |s| %> 
+            <%= link_to s.start_time.to_s(:time), edit_show_time_path(s.id) %>
+        <% end %>
+        <br/>
+    <% end %>
+</div>

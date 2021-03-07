@@ -1,0 +1,8 @@
+<h4>Movies List</h4>
+<% @movies.each do |movie| %>
+    <div>
+        <%= link_to(image_tag("https://robohash.org/#{movie.id}"), movie_path(movie)) %>
+        <strong><%= movie.name %></strong> 
+        <span><%= movie.language %></span>
+    </div>
+<% end %>

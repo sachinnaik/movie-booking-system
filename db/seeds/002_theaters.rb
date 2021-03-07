@@ -1,13 +1,13 @@
-theatres = [ {name: "Arjun", city_id: 1 }, 
-    {name: "Laxmi", city_id: 1 }, 
-    {name: "Gitanjali", city_id: 1 },
-    {name: "Roxy", city_id: 1 }, 
-    {name: "Galaxy", city_id: 1 }, 
-    {name: "Satyam", city_id: 1 },
-    {name: "Eros", city_id: 1 },
-    {name: "New Empire", city_id: 1 },
-    {name: "Raviraj", city_id: 1 },
-    {name: "Metro", city_id: 1 } ]
+theatres = [ {name: "Screen 10", city_id: 1 }, 
+    {name: "Screen 1", city_id: 1 }, 
+    {name: "Screen 2", city_id: 1 },
+    {name: "Screen 3", city_id: 1 }, 
+    {name: "Screen 4", city_id: 1 }, 
+    {name: "Screen 5", city_id: 1 },
+    {name: "Screen 6", city_id: 1 },
+    {name: "Screen 7", city_id: 1 },
+    {name: "Screen 8", city_id: 1 },
+    {name: "Screen 9", city_id: 1 } ]
 theatres.each do |theatre|
     Theatre.find_or_create_by(theatre)
 end

@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'movies#index'
+
+  resources :movies
+  resources :show_times
+
+  scope controller: :show_times do
+    patch '/update-seats', to: "show_times#update_seats"
+  end
+  
 end
