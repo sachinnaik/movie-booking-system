@@ -7,13 +7,16 @@ Things you may want to cover:
 
 * Ruby version
 3.0.0
+rails 6
 
-* System dependencies
+* System dependencies   
+posrgres installed
 
 * Configuration
 
 * Database creation
-Use postgres as using postgres json at one place.
+Use postgres as using postgres json in some scenario.
+rails db:seed to create seed data
 
 * Database initialization
 
