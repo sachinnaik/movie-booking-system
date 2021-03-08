@@ -5,19 +5,24 @@ Screen: <%= @show_time[0].theatre.name %><br/>
 <br/><br/><br/><br/><br/>
 <%= form_with(url: '/update-seats', method: :patch) do %>
     <%= hidden_field_tag :show_time_id, @show_time[0].id %>
+    <% last_row = "" %>
     <% @show_time[0].seats.each do |row| %>
-        <%= row[0] %>
+        <%= last_row = row[0] %>
+        <% price = row[0] <= "D" ? "140" : "200" %>
         <% row[1].each do |k, v| %>
             <%= k %>:
             <% if v == "" %>
-                <%= check_box_tag "seats[]", ["#{row[0]}.#{k}"] %>
+                <%= check_box_tag "seats[]", ["#{row[0]}.#{k}.#{price}"], false, class: 'edit-seat' %>
             <% else %>
                 <%= check_box_tag "#{row[0]}.#{k}", v, true, disabled: true %>
             <% end %>
         <% end %>
         <br />
     <% end %>
+    <p>Price: Row A to D - Rs. 140.00 and Row E to <%= last_row %> Rs. 200.00</p>
+    <p>Total Amount: <span id="total-amount">0</span></p>
     <br/><br/>
     <%= link_to 'Back', :back %> | <%= submit_tag "Submit" %>
 <% end %>
 </div>
+<%= javascript_pack_tag 'show_time_edit' %>

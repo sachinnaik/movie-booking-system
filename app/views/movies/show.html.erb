@@ -5,10 +5,16 @@
         Screen: <%= @show_times.first[1][0].theatre.name %>
     </div>
     <br/>
+    <% time_now = Time.now.to_s(:time) %>
+    <% todays_date = Date.today.to_s %>
     <% @show_times.each do |st| %>
-        <%= st[0] %>, 
+        <%= st[0] %>,
         <% st[1].each do |s| %> 
-            <%= link_to s.start_time.to_s(:time), edit_show_time_path(s.id) %>
+            <% unless((s.start_time.to_s(:time) < time_now) && (st[0].to_s == todays_date)) %>
+                <%= link_to s.start_time.to_s(:time), edit_show_time_path(s.id) %>
+            <% else %>
+                <%= s.start_time.to_s(:time) %>
+            <% end %>
         <% end %>
         <br/>
     <% end %>

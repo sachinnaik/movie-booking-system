@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'movies#index'
+  root 'pages#home'
+  devise_for :users
+  # root 'movies#index'
 
   resources :movies
   resources :show_times
