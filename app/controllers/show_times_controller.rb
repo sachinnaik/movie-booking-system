@@ -12,7 +12,9 @@ class ShowTimesController < ApplicationController
       show_time.seats[row][seat] = current_user.id
     end
     if show_time.save
-      redirect_to movies_path
+      params[:current_user] = current_user
+      Order.create_order(show_time, params)
+      redirect_to movies_path, notice: "Movie Ticket booked Successfully"
     end
   end
 end
