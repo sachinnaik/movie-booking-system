@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movie_id: 1
+  theatre_id: 1
+  show_time_id: 1
+  user_id: 1
+  seats: 
+  queue_status: 1
+  amount: 1.5
+  payment_mode: MyString
+
+two:
+  movie_id: 1
+  theatre_id: 1
+  show_time_id: 1
+  user_id: 1
+  seats: 
+  queue_status: 1
+  amount: 1.5
+  payment_mode: MyString

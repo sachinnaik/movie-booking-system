@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'orders/show'
   root 'pages#home'
   devise_for :users
   # root 'movies#index'
