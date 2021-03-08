@@ -1,7 +1,8 @@
 require "test_helper"
 
 class TheatreTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not save order without name" do
+    theatre = Theatre.new
+    assert_not theatre.save
+  end
 end
